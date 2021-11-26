@@ -7,6 +7,7 @@ from discord import Intents
 from dotenv import load_dotenv
 from discord.ext.commands import Bot, has_permissions
 from Utility.email_utility import EmailUtility
+import asyncio
 
 # ----------------------------------------------------------------------------------------------
 # Initializes the discord bot with a unique TOKEN and joins the bot to a server provided by the
@@ -25,6 +26,7 @@ intents = Intents.all()
 # Set all bot commands to begin with $
 bot = Bot(intents=intents, command_prefix="$")
 
+spam_log=[]
 
 # ------------------------------------------------------------------------------------------------------------------
 #    Function: on_ready()
@@ -58,6 +60,26 @@ async def on_ready():
         )
     )
     print("READY!")
+
+    while True:
+        print('spam cleared')
+        await asyncio.sleep(10)
+        spam_log.clear()
+
+
+@bot.event
+async def on_message(message):
+    await bot.process_commands(message)
+    counter=1    
+    for i in range(len(spam_log)): 
+        if spam_log[i]==str(message.author.id):
+            counter=counter+1
+    spam_log.append(str(message.author.id))
+    if counter>4:
+        await message.channel.send('please stop spamming! '+message.author.mention+', this may lead to a BAN/KICK!')
+        def check(m):
+            return str(m.author) == str(message.author)
+        await message.channel.purge(limit=6, check=check)
 
 @bot.event
 async def on_raw_reaction_add(payload):
