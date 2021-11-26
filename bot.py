@@ -164,6 +164,51 @@ async def reload(ctx,extension):
     await ctx.send(str(extension)+' cog has been reloaded')
 
 # ----------------------------------
+#    Function: Ban
+#    Description: Command for banning spammers
+#    Inputs:
+#    - ctx: used to access the values passed through the current context
+#    - member: name of the memeber
+#    - reason: reason for ban
+#    Outputs:
+#    - response from bot
+# ----------------------------------
+
+@bot.command(name='ban',help="bans a member")
+@has_permissions(administrator=True)
+async def ban(ctx,member:discord.Member,*,reason=None):
+
+    await member.ban(reason=reason)
+    await ctx.send(str(member.mention)+' has been banned for '+reason)
+
+# ----------------------------------
+#    Function: unBan
+#    Description: Command for unbanning 
+#    Inputs:
+#    - ctx: used to access the values passed through the current context
+#    - member: name of the memeber
+#    Outputs:
+#    - response from bot
+# ----------------------------------
+
+@bot.command(name='unban',help="unbans a member")
+@has_permissions(administrator=True)
+async def unban(ctx,*,member):
+
+    banned_users= await ctx.guild.bans()
+
+    member_name,member_discriminator=member.split('#')
+
+    for entry in banned_users:
+
+        user=entry.user
+        if (user.name,user.discriminator)==(member_name,member_discriminator):
+            await ctx.guild.unban(user)
+            await ctx.send('unbanned '+member.mention)
+            return
+
+
+# ----------------------------------
 #    Function: on_member_join(member)
 #    Description: Command for shutting down the bot
 #    Inputs:
