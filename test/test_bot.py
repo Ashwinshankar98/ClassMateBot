@@ -13,6 +13,82 @@ import pytest
 # Main file bot testing. Uses dpytest to test bot activity on a simulated server with simulated members
 # ------------------------------------------------------------------------------------------------------
 
+VERIFIED_MEMBER_ROLE = os.getenv("VERIFIED_MEMBER_ROLE")
+
+# ---------------------------
+# Tests cogs/instructor
+# ---------------------------
+@pytest.mark.asyncio
+async def test_instructorcommands(bot):
+    # Test instructor add.
+    # Test email utility by providing just recipient email address.
+    guild = bot.guilds[0]
+    irole = await guild.create_role(name="Instructor", colour=discord.Colour(0xdc143c))
+    srole = await guild.create_role(name=VERIFIED_MEMBER_ROLE, colour=discord.Colour(0x7289da))
+    await dpytest.add_role(guild.members[0], irole)
+
+    await dpytest.message(content=f"$getInstructor")
+    assert dpytest.verify().message().contains().content("the Instructor")
+
+    await dpytest.message(content=f"$setInstructor {guild.members[0]}")
+    assert dpytest.verify().message().contains().content("Not a valid command for this channel")
+
+    channel = await guild.create_text_channel('instructor-channel')
+    await dpytest.message(content=f"$setInstructor {guild.members[0]}", channel=channel)
+    assert dpytest.verify().message().contains().content("is already an Instructor!")
+
+    await dpytest.message(content=f"$setInstructor {guild.members[1]}", channel=channel)
+    assert dpytest.verify().message().contains().content("has been given Instructor role!")
+
+    await dpytest.message(content=f"$removeInstructor {guild.members[1]}")
+    assert dpytest.verify().message().contains().content("Not a valid command for this channel")
+
+    await dpytest.message(content=f"$removeInstructor {guild.members[1]}", channel=channel)
+    assert dpytest.verify().message().contains().content("has been removed from Instructor role and given student role!")
+
+    await dpytest.message(content=f"$removeInstructor {guild.members[1]}", channel=channel)
+    assert dpytest.verify().message().contains().content("is not an Instructor!")
+
+
+# ---------------------------
+# Tests cogs/ta
+# ---------------------------
+@pytest.mark.asyncio
+async def test_tacommands(bot):
+    # Test instructor add.
+    # Test email utility by providing just recipient email address.
+    guild = bot.guilds[0]
+    irole = await guild.create_role(name="Instructor", colour=discord.Colour(0xdc143c))
+    trole = await guild.create_role(name="TA", colour=discord.Colour(0x00ffff))
+    srole = await guild.create_role(name=VERIFIED_MEMBER_ROLE, colour=discord.Colour(0x7289da))
+    await dpytest.add_role(guild.members[0], irole)
+    await dpytest.add_role(guild.members[1], trole)
+
+    await dpytest.message(content=f"$getTA")
+    assert dpytest.verify().message().contains().content("the TA")
+
+    await dpytest.message(content=f"$setTA {guild.members[0]}")
+    assert dpytest.verify().message().contains().content("Not a valid command for this channel")
+
+    channel = await guild.create_text_channel('ta-channel')
+
+    await dpytest.message(content=f"$setTA {guild.members[0]}", channel=channel)
+    assert dpytest.verify().message().contains().content("already has higher role of instructor")
+
+    await dpytest.message(content=f"$setTA {guild.members[1]}", channel=channel)
+    assert dpytest.verify().message().contains().content("is already a TA!")
+
+    await dpytest.message(content=f"$removeTA {guild.members[1]}")
+    assert dpytest.verify().message().contains().content("Not a valid command for this channel")
+
+    await dpytest.message(content=f"$removeTA {guild.members[1]}", channel=channel)
+    assert dpytest.verify().message().contains().content("has been removed from TA role and given student role!")
+
+    await dpytest.message(content=f"$setTA {guild.members[1]}", channel=channel)
+    assert dpytest.verify().message().contains().content("has been given TA role!")
+
+    await dpytest.message(content=f"$removeTA {guild.members[0]}", channel=channel)
+    assert dpytest.verify().message().contains().content("is not a TA!")
 
 # ---------------------------
 # Tests cogs/qanda-ask
@@ -365,30 +441,6 @@ async def test_voting(bot):
         await dpytest.message(content="$vote Project 1")
         assert dpytest.verify().message().contains().content(
             "Could not fine the Group you are in, please contact a TA or join with your group number")
-
-
-# ---------------------------
-# Tests cogs/instructor
-# ---------------------------
-@pytest.mark.asyncio
-async def test_getinstructor(bot):
-    # Test instructor add.
-    # Test email utility by providing just recipient email address.
-    with pytest.raises(Exception):
-        await dpytest.message(content=f"$getInstructor")
-        assert dpytest.verify().message().contains().content("the Instructor")
-
-
-# ---------------------------
-# Tests cogs/TA
-# ---------------------------
-@pytest.mark.asyncio
-async def test_getTA(bot):
-    # Test instructor add.
-    # Test email utility by providing just recipient email address.
-    with pytest.raises(Exception):
-        await dpytest.message(content=f"$getTA")
-        assert dpytest.verify().message().contains().content("the TA")
 
 
 # ---------------------------
