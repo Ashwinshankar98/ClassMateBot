@@ -90,7 +90,36 @@ async def test_tacommands(bot):
     await dpytest.message(content=f"$removeTA {guild.members[0]}", channel=channel)
     assert dpytest.verify().message().contains().content("is not a TA!")
 
+# ---------------------------
+# Tests cogs/qanda-ask
+# ---------------------------
+@pytest.mark.asyncio
+async def test_ask(bot):
+    await dpytest.message("$ask 'Question-1'")
+    assert dpytest.verify().message().contains().content(
+        'Questions can only be posted on q-and-a channel')
 
+
+# ---------------------------
+# Tests cogs/qanda-askanonym
+# ---------------------------
+@pytest.mark.asyncio
+async def test_askanonym(bot):
+    await dpytest.message("$askanonym 'Question-1'")
+    assert dpytest.verify().message().contains().content(
+        'Questions can only be posted on q-and-a channel')
+
+
+# ---------------------------
+# Tests cogs/qanda-answer
+# ---------------------------
+@pytest.mark.asyncio
+async def test_answer(bot):
+    await dpytest.message("$askanonym 'Question-1'")
+    assert dpytest.verify().message().contains().content(
+        'Questions can only be posted on q-and-a channel')
+    
+    
 # --------------------
 # Tests cogs/hello.py
 # --------------------
