@@ -2,7 +2,7 @@
 This command is used to remove a member from Instructors.
 
 # Location of Code
-The code that implements the above mentioned functionality is located [here](../cogs/instructor.py).
+The code that implements the above mentioned functionality is located [here](../../cogs/instructor.py).
 
 # Code Description
 ## Functions
