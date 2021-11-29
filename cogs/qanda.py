@@ -3,15 +3,6 @@ from discord.ext import commands
 import json
 
 
-class Object:
-    def __init__(self, question, number, author, message, ans):
-        self.question = question
-        self.number = number
-        self.author = author
-        self.msg = message
-        self.answer = ans
-
-
 class QuestionsAnswers(commands.Cog):
     ''' Class containing needed question/answer information and identification '''
     def __init__(self, bot):
