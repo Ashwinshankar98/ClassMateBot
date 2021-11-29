@@ -1,4 +1,4 @@
-# About $getInstructor
+# About $setInstructor
 This command is used to set a member as instructor.
 
 # Location of Code
