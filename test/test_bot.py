@@ -1,11 +1,12 @@
 # Copyright (c) 2021 War-Keeper
+from asyncio.tasks import sleep
 import discord
+import discord.ext.test as dpytest
+from discord.utils import get, sleep_until
 import os
 import sys
 from Utility.email_utility import EmailUtility
 from datetime import datetime, timedelta
-import discord.ext.test as dpytest
-from discord.utils import get
 from dotenv import load_dotenv
 import pytest
 
@@ -138,7 +139,25 @@ async def test_tacommands(bot):
     await dpytest.message(content=f"$getTA")
     assert dpytest.verify().message().contains().content("are the TA's!")
     
-    
+# --------------------
+# Tests cogs/profanity.py
+# --------------------
+@pytest.mark.asyncio
+async def test_custom_profanity(bot):
+    await dpytest.message("$custom word")
+    sleep(5)
+    assert dpytest.verify().message().content("Word added to custom profanity filter")
+    await dpytest.message("$custom word")
+    sleep(5)
+    assert dpytest.verify().message().content("Already Added!!")
+
+@pytest.mark.asyncio
+async def test_profanity(bot):
+    await dpytest.message("fuck")
+    sleep(5)
+    assert dpytest.verify().message().content("TestUser0 says: ****")
+
+
 # --------------------
 # Tests cogs/hello.py
 # --------------------
