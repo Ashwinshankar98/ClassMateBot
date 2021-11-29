@@ -5,6 +5,7 @@ import sys
 from Utility.email_utility import EmailUtility
 from datetime import datetime, timedelta
 import discord.ext.test as dpytest
+from discord.utils import get
 from dotenv import load_dotenv
 import pytest
 
@@ -38,8 +39,8 @@ async def test_qanda(bot):
     await dpytest.message(content=f"$answer 1 'Answer-1'", channel=channel)
     assert not dpytest.verify().message().contains().content("$answer")
 
-    await guild.create_text_channel('instructor-commands')
-    channel = get(guild.text_channels, name='instructor-commands')
+    await guild.create_text_channel('instructor_channel')
+    channel = get(guild.text_channels, name='instructor_commands')
     
     await dpytest.message(content=f"$ask 'Question-3'", channel=channel)
     assert dpytest.verify().message().contains().content(
