@@ -2,7 +2,7 @@
 This command lets students/users see the grade chart if previously stated
 
 # Location of Code
-The code that implements the above mentioned gits functionality is located [here](https://github.com/chandur626/ClassMateBot/blob/main/bot.py) and [here](https://github.com/chandur626/ClassMateBot/blob/main/cogs/charts.py).
+The code that implements the above mentioned gits functionality is located [here](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/bot.py) and [here](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/cogs/charts.py).
 
 # Code Description
 ## Functions
