@@ -40,7 +40,7 @@ async def test_qanda(bot):
     assert not dpytest.verify().message().contains().content("$answer")
 
     await guild.create_text_channel('instructor_channel')
-    channel = get(guild.text_channels, name='instructor_commands')
+    channel = get(guild.text_channels, name='instructor_channel')
     
     await dpytest.message(content=f"$ask 'Question-3'", channel=channel)
     assert dpytest.verify().message().contains().content(
