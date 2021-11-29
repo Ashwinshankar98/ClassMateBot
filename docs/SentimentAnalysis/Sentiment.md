@@ -2,7 +2,7 @@
 This command analyzes the sentiment of the message in the context. It returns the polarity score of the message. 
 
 # Location of Code
-The code that implements the above-mentioned gits functionality is located [here](https://github.com/chandur626/ClassMateBot/blob/main/cogs/SentimentAnalysis.py)
+The code that implements the above-mentioned gits functionality is located [here](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/cogs/SentimentAnalysis.py)
 
 # Code Description
 ## Functions
@@ -21,4 +21,4 @@ $sentiment
 ```
 Successful execution of this command will return a the sentiment of the message and its polarity score.
 
-![$sentiment HW](https://github.com/War-Keeper/ClassMateBot/blob/main/data/media/SentimentAnalysis.gif)
+![$sentiment HW](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/data/media/SentimentAnalysis.gif)

@@ -2,7 +2,7 @@
 This command lets the student to pin a message from the discord channel to their private pinning board.
 
 # Location of Code
-The code that implements the above mentioned gits functionality is located [here](https://github.com/War-Keeper/ClassMateBot/blob/main/cogs/pinning.py)
+The code that implements the above mentioned gits functionality is located [here](https://github.comAshwinshankar98/ClassMateBot/blob/main/cogs/pinning.py)
 
 # Code Description
 ## Functions
