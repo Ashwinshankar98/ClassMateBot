@@ -16,6 +16,44 @@ import pytest
 VERIFIED_MEMBER_ROLE = os.getenv("VERIFIED_MEMBER_ROLE")
 
 # ---------------------------
+# Tests cogs/qanda-ask
+# ---------------------------
+@pytest.mark.asyncio
+async def test_qanda(bot):
+    guild = bot.guilds[0]
+    await guild.create_text_channel('q-and-a')
+    channel = get(guild.text_channels, name='q-and-a')
+    
+    await dpytest.message(content=f"$ask 'Question-1'", channel=channel)
+    assert dpytest.verify().message().contains().content("Question-1")
+    assert not dpytest.verify().message().contains().content("$ask")
+    
+    await dpytest.message(content=f"$askanonym 'Question-2'", channel=channel)
+    assert dpytest.verify().message().contains().content("Question-2")
+    assert not dpytest.verify().message().contains().content("$askanonym")
+    
+    await dpytest.message(content=f"$answer 0 'Answer-0'", channel=channel)
+    assert dpytest.verify().message().contains().content("Invalid question number: 0")
+    
+    await dpytest.message(content=f"$answer 1 'Answer-1'", channel=channel)
+    assert not dpytest.verify().message().contains().content("$answer")
+
+    await guild.create_text_channel('instructor-commands')
+    channel = get(guild.text_channels, name='instructor-commands')
+    
+    await dpytest.message(content=f"$ask 'Question-3'", channel=channel)
+    assert dpytest.verify().message().contains().content(
+        "Questions can only be posted on q-and-a channel")
+    
+    await dpytest.message(content=f"$askanonym 'Question-4'", channel=channel)
+    assert dpytest.verify().message().contains().content(
+        "Questions can only be posted on q-and-a channel")
+    
+    await dpytest.message(content=f"$answer 0 'Answer-0'", channel=channel)
+    assert dpytest.verify().message().contains().content(
+        "Questions can only be posted on q-and-a channel")
+
+# ---------------------------
 # Tests cogs/instructor
 # ---------------------------
 @pytest.mark.asyncio
@@ -98,35 +136,6 @@ async def test_tacommands(bot):
 
     await dpytest.message(content=f"$getTA")
     assert dpytest.verify().message().contains().content("are the TA's!")
-
-# ---------------------------
-# Tests cogs/qanda-ask
-# ---------------------------
-@pytest.mark.asyncio
-async def test_ask(bot):
-    await dpytest.message("$ask 'Question-1'")
-    assert dpytest.verify().message().contains().content(
-        'Questions can only be posted on q-and-a channel')
-
-
-# ---------------------------
-# Tests cogs/qanda-askanonym
-# ---------------------------
-@pytest.mark.asyncio
-async def test_askanonym(bot):
-    await dpytest.message("$askanonym 'Question-1'")
-    assert dpytest.verify().message().contains().content(
-        'Questions can only be posted on q-and-a channel')
-
-
-# ---------------------------
-# Tests cogs/qanda-answer
-# ---------------------------
-@pytest.mark.asyncio
-async def test_answer(bot):
-    await dpytest.message("$askanonym 'Question-1'")
-    assert dpytest.verify().message().contains().content(
-        'Questions can only be posted on q-and-a channel')
     
     
 # --------------------
