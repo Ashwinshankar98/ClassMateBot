@@ -11,7 +11,7 @@ class CalAttendance(commands.Cog):
 
     @commands.command()
     async def takeattendance(self, ctx):
-        if ctx.channel.name == 'instructor_channel':
+        if ctx.channel.name == 'instructor-channel':
             attendees = []
             absentees = []
             wanted_channel_id = 0
@@ -77,7 +77,7 @@ class CalAttendance(commands.Cog):
             await ctx.send(embed=embed)
             await ctx.send(f"{shortened_link}")
         else:
-            await ctx.author.send('Command works only in instructor_channel')
+            await ctx.author.send('Command works only in instructor-channel')
             await ctx.message.delete()
 
 
