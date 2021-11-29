@@ -2,7 +2,7 @@
 This command is used to get a list of all instructors.
 
 # Location of Code
-The code that implements the above mentioned functionality is located [here](../cogs/instructor.py).
+The code that implements the above mentioned functionality is located [here](../../cogs/instructor.py).
 
 # Code Description
 ## Functions
