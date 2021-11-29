@@ -28,7 +28,7 @@ async def test_instructorcommands(bot):
     await dpytest.add_role(guild.members[0], irole)
 
     await dpytest.message(content=f"$getInstructor")
-    assert dpytest.verify().message().contains().content("the Instructor")
+    assert dpytest.verify().message().contains().content("is the Instructor!")
 
     await dpytest.message(content=f"$setInstructor {guild.members[0]}")
     assert dpytest.verify().message().contains().content("Not a valid command for this channel")
@@ -39,6 +39,9 @@ async def test_instructorcommands(bot):
 
     await dpytest.message(content=f"$setInstructor {guild.members[1]}", channel=channel)
     assert dpytest.verify().message().contains().content("has been given Instructor role!")
+
+    await dpytest.message(content=f"$getInstructor")
+    assert dpytest.verify().message().contains().content("are the Instructors!")
 
     await dpytest.message(content=f"$removeInstructor {guild.members[1]}")
     assert dpytest.verify().message().contains().content("Not a valid command for this channel")
@@ -65,7 +68,7 @@ async def test_tacommands(bot):
     await dpytest.add_role(guild.members[1], trole)
 
     await dpytest.message(content=f"$getTA")
-    assert dpytest.verify().message().contains().content("the TA")
+    assert dpytest.verify().message().contains().content("is the TA!")
 
     await dpytest.message(content=f"$setTA {guild.members[0]}")
     assert dpytest.verify().message().contains().content("Not a valid command for this channel")
@@ -89,6 +92,12 @@ async def test_tacommands(bot):
 
     await dpytest.message(content=f"$removeTA {guild.members[0]}", channel=channel)
     assert dpytest.verify().message().contains().content("is not a TA!")
+
+    await dpytest.remove_role(guild.members[0], irole)
+    await dpytest.add_role(guild.members[0], trole)
+
+    await dpytest.message(content=f"$getTA")
+    assert dpytest.verify().message().contains().content("are the TA's!")
 
 # ---------------------------
 # Tests cogs/qanda-ask
