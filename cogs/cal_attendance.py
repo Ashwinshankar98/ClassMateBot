@@ -11,15 +11,15 @@ class CalAttendance(commands.Cog):
 
     @commands.command()
     async def takeattendance(self, ctx):
-         """
-            Function: takeattendance
-            Description: Takes attendance for voice-channel
-            Input:
-            - ctx: used to access the values passed through the current context
-            Outputs:
-            - Attendees and Absentees list
-            - Representation of Attendees vs Absentees
         """
+           Function: takeattendance
+           Description: Takes attendance for voice-channel
+           Input:
+           - ctx: used to access the values passed through the current context
+           Outputs:
+           - Attendees and Absentees list
+           - Representation of Attendees vs Absentees
+       """
         if ctx.channel.name == 'instructor-channel':
             attendees = []
             absentees = []
