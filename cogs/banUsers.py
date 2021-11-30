@@ -17,7 +17,6 @@ class BanUsers(commands.Cog):
     - response from bot
     """
     @commands.command(name='ban',help="bans a member")
-    @has_permissions(administrator=True)
     async def ban(self,ctx,member:discord.Member,*,reason=None):
 
         await member.ban(reason=reason)
@@ -34,7 +33,6 @@ class BanUsers(commands.Cog):
     """
 
     @commands.command(name='unban',help="unbans a member")
-    @has_permissions(administrator=True)
     async def unban(self,ctx,*,member):
 
         banned_users= await ctx.guild.bans()
@@ -46,7 +44,7 @@ class BanUsers(commands.Cog):
             user=entry.user
             if (user.name,user.discriminator)==(member_name,member_discriminator):
                 await ctx.guild.unban(user)
-                await ctx.send('unbanned '+member.mention)
+                await ctx.send('unbanned '+str(member))
                 return
 
 def setup(bot):

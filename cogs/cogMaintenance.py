@@ -17,7 +17,6 @@ class CogMaintenance(commands.Cog):
     - response from bot
     """
     @commands.command(name='loadCog',help="loads a specific cog")
-    @has_permissions(administrator=True)
     async def load(self,ctx,extension):
         self.bot.load_extension(f"cogs.{extension}")
         await ctx.send(str(extension)+' cog has been added')
@@ -34,7 +33,6 @@ class CogMaintenance(commands.Cog):
     """
 
     @commands.command(name='unloadCog',help="unloads a specific cog")
-    @has_permissions(administrator=True)
     async def unload(self,ctx,extension):
         self.bot.unload_extension(f"cogs.{extension}")
         await ctx.send(str(extension)+' cog has been removed')
@@ -49,7 +47,6 @@ class CogMaintenance(commands.Cog):
     - response from bot
     """
     @commands.command(name='reloadCog',help="reloads a specific cog")
-    @has_permissions(administrator=True)
     async def reload(self,ctx,extension):
         self.bot.unload_extension(f"cogs.{extension}")
         self.bot.load_extension(f"cogs.{extension}")
