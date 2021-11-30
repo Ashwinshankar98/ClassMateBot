@@ -36,7 +36,7 @@ class Charts(commands.Cog):
             Returns:
                 returns a graph in the chat box
         """
-        with open('data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
             storage = json.load(file)
         quick_chart = QuickChart()
         quick_chart.width = 500
@@ -61,7 +61,7 @@ class Charts(commands.Cog):
         shortener = pyshorteners.Shortener()
         shortened_link = shortener.tinyurl.short(link)
         await self.update_chart(storage, "grades", shortened_link)
-        with open('data/charts/chartstorage.json', 'w', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'w', encoding='utf-8') as file:
             json.dump(storage, file, indent=4)
         await ctx.send(f"{shortened_link}")
 
@@ -93,7 +93,7 @@ class Charts(commands.Cog):
             Returns:
                 returns a graph in the chat box
         """
-        with open('data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
             storage = json.load(file)
         quick_chart = QuickChart()
         quick_chart.width = 500
@@ -115,7 +115,7 @@ class Charts(commands.Cog):
         shortener = pyshorteners.Shortener()
         shortened_link = shortener.tinyurl.short(link)
         await self.update_chart(storage, "attendance", shortened_link)
-        with open('data/charts/chartstorage.json', 'w', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'w', encoding='utf-8') as file:
             json.dump(storage, file, indent=4)
         await ctx.send(f"{shortened_link}")
 
@@ -141,7 +141,7 @@ class Charts(commands.Cog):
             Returns:
                 returns a graph in the chat box if grades chart exists
         """
-        with open('data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
             storage = json.load(file)
             if not storage or storage["grades"] == '':
                 await ctx.send("No grades posted!")
@@ -157,7 +157,7 @@ class Charts(commands.Cog):
             Returns:
                 returns a graph in the chat box if attendance chart exists
         """
-        with open('data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
             storage = json.load(file)
             if not storage or storage["attendance"] == '':
                 await ctx.send("No attendance chart posted!")
@@ -174,7 +174,7 @@ class Charts(commands.Cog):
             Returns:
                 returns the custom chart in the chat box if it exists
         """
-        with open('data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
             storage = json.load(file)
             if not storage or storage[name] == '':
                 await ctx.send("No chart with that name!")
@@ -215,7 +215,7 @@ class Charts(commands.Cog):
         if len(args) / 2 != data_count:
             raise IllegalArgumentsError
 
-        with open('data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'r', encoding='utf-8') as file:
             storage = json.load(file)
 
         labels_list = []
@@ -248,7 +248,7 @@ class Charts(commands.Cog):
         shortened_link = shortener.tinyurl.short(link)
 
         await self.update_chart(storage, title, shortened_link)
-        with open('data/charts/chartstorage.json', 'w', encoding='utf-8') as file:
+        with open('./data/charts/chartstorage.json', 'w', encoding='utf-8') as file:
             json.dump(storage, file, indent=4)
         await ctx.send(f"{shortened_link}")
 

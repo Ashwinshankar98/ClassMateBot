@@ -27,12 +27,12 @@ class userRanking(commands.Cog):
                 self: used to access parameters passed to the class through
                 member: used to access the values passed through the current context
         """
-        with open('data/participation/users.json', 'r', encoding='utf-8') as file:
+        with open('./data/participation/users.json', 'r', encoding='utf-8') as file:
             users = json.load(file)
 
         await self.update_data(users, member)
 
-        with open('data/participation/users.json', 'w', encoding='utf-8') as file:
+        with open('./data/participation/users.json', 'w', encoding='utf-8') as file:
             json.dump(users, file, indent=4)
 
     @commands.Cog.listener()
@@ -46,13 +46,13 @@ class userRanking(commands.Cog):
         if not message.author.bot:
             cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             os.chdir(cur_dir)
-            with open('data/participation/users.json', 'r', encoding='utf-8') as file:
+            with open('./data/participation/users.json', 'r', encoding='utf-8') as file:
                 users = json.load(file)
             await self.update_data(users, message.author)
             await self.add_experience(users, message.author)
             await self.level_up(message, users)
 
-            with open('data/participation/users.json', 'w', encoding='utf-8') as file:
+            with open('./data/participation/users.json', 'w', encoding='utf-8') as file:
                 json.dump(users, file, indent=4)
 
     async def update_data(self, users, user):
@@ -120,7 +120,7 @@ class userRanking(commands.Cog):
                 ctx: used to access the values passed through the current context
                 user: the discord member
         """
-        with open('data/participation/users.json', 'r', encoding='utf-8') as file:
+        with open('./data/participation/users.json', 'r', encoding='utf-8') as file:
             users = json.load(file)
         await ctx.send('Contribute more to level up!')
         if user is None:
@@ -178,7 +178,7 @@ class userRanking(commands.Cog):
             embed.set_footer(text=f"next level: {lvl + 1}")
             await ctx.send(embed=embed)
 
-        with open('data/participation/users.json', 'w', encoding='utf-8') as file:
+        with open('./data/participation/users.json', 'w', encoding='utf-8') as file:
             json.dump(users, file, indent=4)
 
     @commands.command()
@@ -190,7 +190,7 @@ class userRanking(commands.Cog):
                 ctx: used to access the values passed through the current context
                 user: the discord member to be added
         """
-        with open('data/participation/users.json', 'r', encoding='utf-8') as file:
+        with open('./data/participation/users.json', 'r', encoding='utf-8') as file:
             users = json.load(file)
         if not str(user.id) in users:
             users[str(user.id)] = {}
@@ -201,7 +201,7 @@ class userRanking(commands.Cog):
         else:
             await ctx.send("already in database!")
 
-        with open('data/participation/users.json', 'w', encoding='utf-8') as file:
+        with open('./data/participation/users.json', 'w', encoding='utf-8') as file:
             json.dump(users, file, indent=4)
 
 def setup(bot):

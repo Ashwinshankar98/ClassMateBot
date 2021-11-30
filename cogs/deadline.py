@@ -23,7 +23,7 @@ class Deadline(commands.Cog):
         self.bot = bot
         cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         os.chdir(cur_dir)
-        self.reminders = json.load(open("data/remindme/reminders.json"))
+        self.reminders = json.load(open("./data/remindme/reminders.json"))
         self.units = {"second": 1, "minute": 60, "hour": 3600, "day": 86400, "week": 604800,
                       "month": 2592000}
 
@@ -70,7 +70,7 @@ class Deadline(commands.Cog):
                                    "FUTURE": seconds})
             cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             os.chdir(cur_dir)
-            json.dump(self.reminders, open("data/remindme/reminders.json", "w"))
+            json.dump(self.reminders, open("./data/remindme/reminders.json", "w"))
             await ctx.send(
                 "A date has been added for: {} homework named: {} which is due on: {} by {}.".
                 format(
@@ -118,7 +118,7 @@ class Deadline(commands.Cog):
         if to_remove:
             cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             os.chdir(cur_dir)
-            json.dump(self.reminders, open("data/remindme/reminders.json", "w"))
+            json.dump(self.reminders, open("./data/remindme/reminders.json", "w"))
             await ctx.send(
                 "Following reminder has been deleted: Course: {},"
                 " Homework Name: {}, Due Date: {}".format(
@@ -172,7 +172,7 @@ class Deadline(commands.Cog):
                 if flag:
                     cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
                     os.chdir(cur_dir)
-                    json.dump(self.reminders, open("data/remindme/reminders.json", "w"))
+                    json.dump(self.reminders, open("./data/remindme/reminders.json", "w"))
                     await ctx.send(
                         "{} {} has been updated with"
                         " following date: {}".format(classid, hwid, reminder["DUEDATE"]))
@@ -315,7 +315,7 @@ class Deadline(commands.Cog):
         if to_remove:
             cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             os.chdir(cur_dir)
-            json.dump(self.reminders, open("data/remindme/reminders.json", "w"))
+            json.dump(self.reminders, open("./data/remindme/reminders.json", "w"))
             await ctx.send("All reminders have been cleared..!!")
 
     @commands.command(name="remindme", pass_context=True,
@@ -355,7 +355,7 @@ class Deadline(commands.Cog):
 
         #self.reminders.append({"ID": author.id, "FUTURE": future, "TEXT": text})
         await ctx.send("I will remind you that in {} {}.".format(str(quantity), time_unit + s))
-        #json.dump(self.reminders, open("data/remindme/reminders.json", "w"))
+        #json.dump(self.reminders, open("./data/remindme/reminders.json", "w"))
         self.remindme_timer.start(ctx, text)
 
 
@@ -422,7 +422,7 @@ class Deadline(commands.Cog):
             if to_remove:
                 cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
                 os.chdir(cur_dir)
-                json.dump(self.reminders, open("data/remindme/reminders.json", "w"))
+                json.dump(self.reminders, open("./data/remindme/reminders.json", "w"))
             await asyncio.sleep(5)
 
 
@@ -430,16 +430,16 @@ def check_folders():
     """checks if the folder that is going to hold json exists else creates a new one."""
     cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     os.chdir(cur_dir)
-    if not os.path.exists("data/remindme"):
-        print("Creating data/remindme folder...")
-        os.makedirs("data/remindme")
+    if not os.path.exists("./data/remindme"):
+        print("Creating ./data/remindme folder...")
+        os.makedirs("./data/remindme")
 
 
 def check_files():
     """checks if a json file exists else creates a new one"""
     cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     os.chdir(cur_dir)
-    f = "data/remindme/reminders.json"
+    f = "./data/remindme/reminders.json"
     print("Creating file...")
     if not os.path.exists(f):
         print("Creating empty reminders.json...")
@@ -461,7 +461,7 @@ def setup(bot):
 def send_email_notify(reminder, timedate): # pragma: no cover
     sender_address = 'rightwritesupp0rt@gmail.com'
     sender_pass = 'WriteRight20$'
-    receiver_address = json.load(open("data/email/emails.json"))
+    receiver_address = json.load(open("./data/email/emails.json"))
     mail_content = "{} {} is due today at {}".format(
         reminder["COURSE"], reminder["HOMEWORK"], timedate.time())
 

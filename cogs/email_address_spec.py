@@ -23,7 +23,7 @@ class EmailAddressCRUD(commands.Cog):
         self.email_list = None
         cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         os.chdir(cur_dir)
-        with open("data/email/emails.json", "r", encoding='utf-8') as file:
+        with open("./data/email/emails.json", "r", encoding='utf-8') as file:
             self.email_list = json.load(file)
 
     @commands.command(name="add_email",
@@ -49,7 +49,7 @@ class EmailAddressCRUD(commands.Cog):
             return
 
         if not self.email_list:
-            with open("data/email/emails.json", "r", encoding='utf-8') as file:
+            with open("./data/email/emails.json", "r", encoding='utf-8') as file:
                 self.email_list = json.load(file)
 
         if str(author.id) in self.email_list.keys():
@@ -59,7 +59,7 @@ class EmailAddressCRUD(commands.Cog):
             return
         else:
             self.email_list[str(author.id)] = email_address
-            with open("data/email/emails.json", "w", encoding='utf-8') as file:
+            with open("./data/email/emails.json", "w", encoding='utf-8') as file:
                 json.dump(self.email_list, file)
             await ctx.send("Email address has been configured successfully..!")
 
@@ -88,7 +88,7 @@ class EmailAddressCRUD(commands.Cog):
         author = ctx.message.author
 
         if not self.email_list:
-            with open("data/email/emails.json", "r", encoding='utf-8') as file:
+            with open("./data/email/emails.json", "r", encoding='utf-8') as file:
                 self.email_list = json.load(file)
 
         if str(author.id) in self.email_list:
@@ -120,12 +120,12 @@ class EmailAddressCRUD(commands.Cog):
             return
 
         if not self.email_list:
-            with open("data/email/emails.json", "r", encoding='utf-8') as file:
+            with open("./data/email/emails.json", "r", encoding='utf-8') as file:
                 self.email_list = json.load(file)
 
         if str(author.id) in self.email_list:
             self.email_list[str(author.id)] = email_address
-            with open("data/email/emails.json", "w", encoding='utf-8') as file:
+            with open("./data/email/emails.json", "w", encoding='utf-8') as file:
                 json.dump(self.email_list, file)
             await ctx.send("Email address has been updated successfully..!")
         else:
@@ -157,12 +157,12 @@ class EmailAddressCRUD(commands.Cog):
         author = ctx.message.author
 
         if not self.email_list:
-            with open("data/email/emails.json", "r", encoding='utf-8') as file:
+            with open("./data/email/emails.json", "r", encoding='utf-8') as file:
                 self.email_list = json.load(file)
 
         if str(author.id) in self.email_list:
             del self.email_list[str(author.id)]
-            with open("data/email/emails.json", "w", encoding='utf-8') as file:
+            with open("./data/email/emails.json", "w", encoding='utf-8') as file:
                 json.dump(self.email_list, file)
             await ctx.send("Email address has been deleted successfully..!")
         else:
