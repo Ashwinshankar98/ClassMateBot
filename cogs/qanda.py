@@ -7,7 +7,7 @@ class QuestionsAnswers(commands.Cog):
     ''' Class containing needed question/answer information and identification '''
     def __init__(self, bot):
         self.bot = bot
-        with open('data/qanda/qandastorage.json', 'r', encoding='utf-8') as file:
+        with open('./data/qanda/qandastorage.json', 'r', encoding='utf-8') as file:
             self.data = json.load(file)
 
     @commands.command()
@@ -16,7 +16,7 @@ class QuestionsAnswers(commands.Cog):
             ''' add a question '''
             global QUESTION_NUMBER
 
-            with open('data/qanda/qandastorage.json', 'r', encoding='utf-8') as file:
+            with open('./data/qanda/qandastorage.json', 'r', encoding='utf-8') as file:
                 self.data = json.load(file)
 
             if self.data:
@@ -35,7 +35,7 @@ class QuestionsAnswers(commands.Cog):
                 "id": str(message.id),
                 "answer": ""
             }
-            with open('data/qanda/qandastorage.json', 'w', encoding='utf-8') as file:
+            with open('./data/qanda/qandastorage.json', 'w', encoding='utf-8') as file:
                 json.dump(self.data, file)
 
             # delete original question
@@ -50,7 +50,7 @@ class QuestionsAnswers(commands.Cog):
             ''' add a question '''
             global QUESTION_NUMBER
 
-            with open('data/qanda/qandastorage.json', 'r', encoding='utf-8') as file:
+            with open('./data/qanda/qandastorage.json', 'r', encoding='utf-8') as file:
                 self.data = json.load(file)
             if self.data:
                 QUESTION_NUMBER = len(self.data) + 1
@@ -68,7 +68,7 @@ class QuestionsAnswers(commands.Cog):
                 "id": str(message.id),
                 "answer": ""
             }
-            with open('data/qanda/qandastorage.json', 'w', encoding='utf-8') as file:
+            with open('./data/qanda/qandastorage.json', 'w', encoding='utf-8') as file:
                 json.dump(self.data, file)
 
             # delete original question
@@ -80,7 +80,7 @@ class QuestionsAnswers(commands.Cog):
     @commands.command()
     async def answer(self, ctx, q_num, ans):
         if ctx.channel.name == 'q-and-a':
-            with open('data/qanda/qandastorage.json', 'r', encoding='utf-8') as file:
+            with open('./data/qanda/qandastorage.json', 'r', encoding='utf-8') as file:
                 self.data = json.load(file)
 
             if not self.data or q_num not in self.data.keys():
@@ -113,7 +113,7 @@ class QuestionsAnswers(commands.Cog):
 
             try:
                 await message.edit(content=content)
-                with open('data/qanda/qandastorage.json', 'w', encoding='utf-8') as file:
+                with open('./data/qanda/qandastorage.json', 'w', encoding='utf-8') as file:
                     json.dump(self.data, file)
             except NotFound:
                 await ctx.author.send('Invalid question number: ' + str(q_num))

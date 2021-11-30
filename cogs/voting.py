@@ -183,7 +183,7 @@ def print_groups(group):
     """
         Used to print the groups to the csv file.
     """
-    with open('data/server_data/groups.csv', mode='w', newline="") as outfile:
+    with open('./data/server_data/groups.csv', mode='w', newline="") as outfile:
         writer = csv.writer(outfile)
         for key in group.keys():
             while len(group[key]) < 6:

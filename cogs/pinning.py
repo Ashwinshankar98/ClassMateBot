@@ -15,7 +15,7 @@ class Pinning(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.pinned_messages = json.load(open("data/PinMessage/PinnedMessages.json"))
+        self.pinned_messages = json.load(open("./data/PinMessage/PinnedMessages.json"))
 
     # Test command to check if the bot is working
     @commands.command()
@@ -41,7 +41,7 @@ class Pinning(commands.Cog):
 
         self.pinned_messages.append(
             {"ID": author.id, "TAG": tagname, "DESCRIPTION": description, "LINK": link})
-        json.dump(self.pinned_messages, open("data/PinMessage/PinnedMessages.json", "w"))
+        json.dump(self.pinned_messages, open("./data/PinMessage/PinnedMessages.json", "w"))
         await ctx.send(
             "A new message has been pinned with tag: {} and link: {} with a description: {} by {}.".format(tagname,
                                                                                                            link,
@@ -83,7 +83,7 @@ class Pinning(commands.Cog):
         for pin_mes in to_remove:
             self.pinned_messages.remove(pin_mes)
         if to_remove:
-            json.dump(self.pinned_messages, open("data/PinMessage/PinnedMessages.json", "w"))
+            json.dump(self.pinned_messages, open("./data/PinMessage/PinnedMessages.json", "w"))
             await ctx.send(
                 "{} pinned message(s) has been deleted with tag: {} and description: {}.".format(len(to_remove),
                                                                                                  str(pin_mes["TAG"]),
@@ -148,7 +148,7 @@ class Pinning(commands.Cog):
                 pin_mes["LINK"] = new_link
                 flag = True
                 if (flag):
-                    json.dump(self.pinned_messages, open("data/PinMessage/PinnedMessages.json", "w"))
+                    json.dump(self.pinned_messages, open("./data/PinMessage/PinnedMessages.json", "w"))
                     await ctx.send(
                         "A pinned message has been updated with tag: {} and new link: {} by: {}.".format(tagname,
                                                                                                          new_link,
@@ -169,9 +169,9 @@ Used to create a json file if none exist
 -----------------------------------------
 """
 def check_folders():
-    if not os.path.exists("data/PinMessage"):
-        print("Creating data/PinMessage folder...")
-        os.makedirs("data/PinMessage")
+    if not os.path.exists("./data/PinMessage"):
+        print("Creating ./data/PinMessage folder...")
+        os.makedirs("./data/PinMessage")
 
 
 """
@@ -180,7 +180,7 @@ Used to create a json file if none exist
 -----------------------------------------
 """
 def check_files():
-    f = "data/PinMessage/PinnedMessages.json"
+    f = "./data/PinMessage/PinnedMessages.json"
     if not os.path.exists(f):
         print("Creating empty PinnedMessages.json...")
         json.dump([], open(f, "w"))

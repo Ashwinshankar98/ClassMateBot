@@ -58,7 +58,7 @@ class Helper(commands.Cog):
                     guild.roles, name=self.VERIFIED_MEMBER_ROLE
                 )  # finds the verified role in the guild
                 with open(
-                    "data/server_data/name_mapping.csv", mode="a", newline=""
+                    "./data/server_data/name_mapping.csv", mode="a", newline=""
                 ) as outfile:  # storing discord name and actual name in name_mapping.csv
                     writer = csv.writer(outfile)
                     writer.writerow([member.name, name, -1]) # initially group number is assigned to -1
