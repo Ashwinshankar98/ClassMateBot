@@ -42,7 +42,7 @@ There are three basic user groups in a ClassMateBot, which are Students, Profess
 For Iteration 2, we aimed to expand the Bot's functionality so Professors and TAs can be more efficient and widened our scope outside of just our Software Engineering class. We researched how different classes in different programs (ex. Social Sciences, English, Humanities) could benefit from an improved bot. We believe our bot's commands like auto-grouping students, sending emails directly from discord to students, sentiment analysis, visualizing data/statistics, greatly benefits class management and information distribution. 
 
 ---
-### 0 - Original Features
+### 0 - Phase Features
 You can find the Original Features from Iteration 1 [here](https://github.com/Ashwinshankar98/ClassMateBot/blob/README-update/docs/Iteration1Features.md)
 
 ### 1 - Auto-Grouping Students
@@ -111,6 +111,45 @@ python3 bot.py
 ```
 
 ---
+## Version 3 Commands
+Attendance
+
+:open_file_folder: [$takeattendance command](./docs/Attendance/takeattendance.md)
+
+Messaging
+
+:open_file_folder: [$DM command](./docs/DM/Private_msg.md)
+
+:open_file_folder: [$reminder command](./docs/DM/group_reminder.md)
+
+Profanity
+
+:open_file_folder: [$custom command](./docs/Profanity/profanity.md)
+
+Question and Answers
+
+:open_file_folder: [$ask command](./docs/Q%20and%20A/ask.md)
+
+:open_file_folder: [$askanonym command](./docs/Q%20and%20A/ask_anonymous.md)
+
+:open_file_folder: [$answer command](./docs/Q%20and%20A/answer.md)
+
+New Role - Instructor
+
+:open_file_folder: [$getInstructor command](./docs/Instructors/Get_Instructor.md)
+
+:open_file_folder: [$setInstructor command](./docs/Instructors/Set_Instructor.md)
+
+:open_file_folder: [$removeInstructor command](./docs/Instructors/Remove_Instructor.md.md)
+
+New Role - TA
+
+:open_file_folder: [$getTA command](./docs/TA/Get_TA.md)
+
+:open_file_folder: [$setTA command](./docs/TA/Set_TA.md)
+
+:open_file_folder: [$removeTA command](.docs/TA/Remove_TA.md)
+
 ## Version 2 Commands
 Data Visualization
 
