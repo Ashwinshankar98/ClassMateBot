@@ -42,10 +42,12 @@ There are three basic user groups in a ClassMateBot, which are Students, Profess
 For Iteration 2, we aimed to expand the Bot's functionality so Professors and TAs can be more efficient and widened our scope outside of just our Software Engineering class. We researched how different classes in different programs (ex. Social Sciences, English, Humanities) could benefit from an improved bot. We believe our bot's commands like auto-grouping students, sending emails directly from discord to students, sentiment analysis, visualizing data/statistics, greatly benefits class management and information distribution. 
 
 ---
+
 ### Phase 1 Features
 You can find the Features from Iteration 1 [here](./docs/Iteration1Features.md)
 ### Phase 2 Features
 You can find the Features from Iteration 2 [here](./docs/Iteration2Features.md)
+
 ---
 ### Phase 3 Features
 
