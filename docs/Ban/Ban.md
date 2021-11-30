@@ -1,4 +1,4 @@
-# About $Ban
+# About $ban
 This command is used by the bot to Ban spammers.
 
 # Location of Code
