@@ -18,6 +18,25 @@ import pytest
 VERIFIED_MEMBER_ROLE = os.getenv("VERIFIED_MEMBER_ROLE")
 
 # ---------------------------
+# Tests cog/cogMaintenance
+# ---------------------------
+@pytest.mark.asyncio
+async def test_cogMaintenance(bot):
+    # Test instructor add.
+    # Test email utility by providing just recipient email address.
+    guild = bot.guilds[0]
+    channel = await guild.create_text_channel('instructor-channel')
+    await dpytest.message(content=f"$unloadCog instructor", channel = channel)
+    assert dpytest.verify().message().content("instructor cog has been removed")
+
+    await dpytest.message(content=f"$loadCog instructor",channel=channel)
+    assert dpytest.verify().message().content("instructor cog has been added")
+
+    await dpytest.message(content=f"$reloadCog instructor",channel=channel)
+    assert dpytest.verify().message().content("instructor cog has been reloaded")
+
+
+# ---------------------------
 # Tests cogs/qanda
 # ---------------------------
 @pytest.mark.asyncio
@@ -157,16 +176,16 @@ async def test_tacommands(bot):
 @pytest.mark.asyncio
 async def test_custom_profanity(bot):
     await dpytest.message("$custom word")
-    sleep(5)
+    await sleep(5)
     assert dpytest.verify().message().content("Word added to custom profanity filter")
     await dpytest.message("$custom word")
-    sleep(5)
+    await sleep(5)
     assert dpytest.verify().message().content("Already Added!!")
 
 @pytest.mark.asyncio
 async def test_profanity(bot):
     await dpytest.message("fuck")
-    sleep(5)
+    await sleep(5)
     assert dpytest.verify().message().content("TestUser0 says: ****")
 
 
@@ -494,42 +513,6 @@ async def test_voting(bot):
 
 
 # ---------------------------
-# Tests bot/unloadCog
-# ---------------------------
-@pytest.mark.asyncio
-async def test_unloadCog(bot):
-    # Test instructor add.
-    # Test email utility by providing just recipient email address.
-    with pytest.raises(Exception):
-        await dpytest.message(content=f"$unloadCog instructor")
-        assert dpytest.verify().message().content("instructor cog has been removed")
-
-
-# ---------------------------
-# Tests bot/loadCog
-# ---------------------------
-@pytest.mark.asyncio
-async def test_loadCog(bot):
-    # Test instructor add.
-    # Test email utility by providing just recipient email address.
-    with pytest.raises(Exception):
-        await dpytest.message(content=f"$loadCog instructor")
-        assert dpytest.verify().message().content("instructor cog has been added")
-
-
-# ---------------------------
-# Tests bot/reloadCog
-# ---------------------------
-@pytest.mark.asyncio
-async def test_reloadCog(bot):
-    # Test instructor add.
-    # Test email utility by providing just recipient email address.
-    with pytest.raises(Exception):
-        await dpytest.message(content=f"$reloadCog instructor")
-        assert dpytest.verify().message().content("instructor cog has been reloaded")
-
-
-# ---------------------------
 # Tests Utility/email_utility
 # ---------------------------
 @pytest.mark.asyncio
@@ -543,6 +526,3 @@ async def test_email_utility(bot):
         with open('data/email/emails.json') as file:
             EmailUtility().send_email('noreplyclassmatebot@example.com', attachment=file.read())
             
-     
-
-
