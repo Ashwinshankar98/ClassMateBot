@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import has_permissions
 
 class BanUsers(commands.Cog):
-    """DM functionality"""
+    """Ban functionality"""
     def __init__(self, bot):
         self.bot = bot
     """
@@ -11,7 +11,7 @@ class BanUsers(commands.Cog):
     Description: Command for banning spammers
     Inputs:
     - ctx: used to access the values passed through the current context
-    - member: name of the memeber
+    - member: name of the member
     - reason: reason for ban
     Outputs:
     - response from bot
@@ -27,7 +27,7 @@ class BanUsers(commands.Cog):
     Description: Command for unbanning 
     Inputs:
     - ctx: used to access the values passed through the current context
-    - member: name of the memeber
+    - member: name of the member
     Outputs:
     - response from bot
     """
