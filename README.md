@@ -89,6 +89,11 @@ This functionality enables users to ask questions in the q-and-a channel. They c
 
 Members can also answer these questions. The role will be displayed next to the answer.
 
+### 8. Spam warning and Ban
+
+When a member is spamming the server, after 5 consecutive messages, they will get a warning.
+The bot can also Ban and Unban spammers or members if applicable.
+
 ---
 
 ## :arrow_down: Installation
@@ -150,7 +155,15 @@ New Role - TA
 
 :open_file_folder: [$setTA command](./docs/TA/Set_TA.md)
 
-:open_file_folder: [$removeTA command](.docs/TA/Remove_TA.md)
+:open_file_folder: [$removeTA command](./docs/TA/Remove_TA.md)
+
+Spam Warning and Ban
+
+:open_file_folder: [$ban command](./docs/Ban/Ban.md)
+
+:open_file_folder: [$unban command](./docs/Ban/Unban.md)
+
+:open_file_folder: [Spam Warning](./docs/Ban/Spam_warning.md)
 
 ## Version 2 Commands
 Data Visualization
