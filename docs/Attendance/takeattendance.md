@@ -12,7 +12,7 @@ The code that implements the above mentioned functionality is located [here](htt
 
 1. def takeattendance(self, ctx): 
 
-This function calculates attendance and shows the list of attendees and absentees. 
+   This function calculates attendance and shows the list of attendees and absentees. 
    
 
 # How to run it? (Small Example)
