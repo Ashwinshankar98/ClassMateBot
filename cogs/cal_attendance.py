@@ -11,6 +11,15 @@ class CalAttendance(commands.Cog):
 
     @commands.command()
     async def takeattendance(self, ctx):
+        """
+           Function: takeattendance
+           Description: Takes attendance for voice-channel
+           Input:
+           - ctx: used to access the values passed through the current context
+           Outputs:
+           - Attendees and Absentees list
+           - Representation of Attendees vs Absentees
+       """
         if ctx.channel.name == 'instructor-channel':
             attendees = []
             absentees = []
@@ -18,10 +27,12 @@ class CalAttendance(commands.Cog):
 
             for channel in ctx.guild.channels:
                 if channel.name == "General":
-                    wanted_channel_id = channel.id
+                    audio_channel_id = channel.id
+                if channel.name == "general":
+                    text_channel_id = channel.id
 
-            audio_channel = self.bot.get_channel(wanted_channel_id)
-            text_channel = self.bot.get_channel(ctx.channel.id)
+            audio_channel = self.bot.get_channel(audio_channel_id)
+            text_channel = self.bot.get_channel(text_channel_id)
 
             embed = discord.Embed(title="Attendance Sheet",
                                   colour=discord.Colour.orange())

@@ -18,7 +18,7 @@ import pytest
 VERIFIED_MEMBER_ROLE = os.getenv("VERIFIED_MEMBER_ROLE")
 
 # ---------------------------
-# Tests cogs/qanda-ask
+# Tests cogs/qanda
 # ---------------------------
 @pytest.mark.asyncio
 async def test_qanda(bot):
@@ -55,6 +55,18 @@ async def test_qanda(bot):
     assert dpytest.verify().message().contains().content(
         "Questions can only be posted on q-and-a channel")
 
+    
+# ---------------------------
+# Tests cogs/cal_attendance
+# ---------------------------
+@pytest.mark.asyncio
+async def test_takeattendance(bot):
+    guild = bot.guilds[0]
+    await guild.create_text_channel('calendar-channel')
+    await dpytest.message(content=f"$takeattendance")
+    assert dpytest.verify().message().contains().content("Command works only in instructor-channel")
+    
+    
 # ---------------------------
 # Tests cogs/instructor
 # ---------------------------
