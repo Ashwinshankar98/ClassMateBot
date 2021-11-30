@@ -14,6 +14,7 @@ The spam_log tracks the authors and displays a warning if the same person has mo
 This is handled by the bot in the backend.
 
 
-When a person has more than 4 consecutive msgs warning will appear as below.
+When a person has more than 4 consecutive msgs, after their 5th msg, warning will appear and all their spams will be deleted.
 
-![spam](./spam.png)
+https://user-images.githubusercontent.com/19858170/143973614-e30fd50c-55b3-4b81-9077-c7f11d469ad4.mp4
+
