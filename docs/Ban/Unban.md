@@ -2,7 +2,7 @@
 This command is used by the bot to unban a banned member.
 
 # Location of Code
-The code that implements the above mentioned functionality is located [here](../../bot.py).
+The code that implements the above mentioned functionality is located [here](../../cogs/banUsers.py).
 
 # Code Description
 ## Functions
