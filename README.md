@@ -62,22 +62,24 @@ We have introduced more channels for ease of communication. We have below channe
 We have introduced roles for better classification of the members and to restrict access for certain commands. We have added below roles,
 - Instructor
 - TA
+- Student
+- Guest
 
 ### 2. Instructor commands
 
-We have multiple commands to handle functionalities related to instructor roles. The instructor has access to the instructr cannel and we have restricted ceratin commands(like attendance) to be used only in the instructor channel.
+We have multiple commands to handle functionalities related to instructor roles. Only the instructors have access to the instructor cannel and we have restricted ceratin commands(like attendance) to be used only in that channel.
 
 ### 3. TA commands
 
-We have multiple commands to handle functionalities related to TA roles. The TAs will have access to the TA channel and similar to Instructors, they also have more access than other members to execute ceratin commands.
+We have multiple commands to handle functionalities related to TA roles. Only TAs and Instructors will have access to the TA channel but unlike instructors channel they aren't any channel specific commands yet.
 
 ### 4. Direct Messaging
 
-Direct messsaging commands allo people to dm privately to any other member of the guild. We also have a command to sned a reminder message or a broadcast message to all the memebrs of the guild privately.
+Direct messsaging commands allows people to dm privately to any other member of the guild. We also have a command to send a reminder message or a broadcast message to all the members of the guild privately.
 
 ### 5. Attendance
 
-The instructors can check the attendees and absentees list using this command. This can be executed only in the instructors channel. This will also show them a districution cart with the present and absentees.
+The instructors can check the attendees and absentees list using this command. This can be executed only in the instructors channel. This will also show them a pie chart of the same.
 
 ### 6. Profanity
 
@@ -85,14 +87,14 @@ This enables users to add a custom word to the profanity filter. These words wil
 
 ### 7. Question and Answer
 
-This functionality enables users to ask questions in the q-and-a channel. They can ask it as themselves, that is, the author name will be displayed next to the question, ot they can ask questions anonymously.  All the questions are auto-numbered for ease of tracking.
+This functionality enables users to ask questions in the q-and-a channel. They can ask it as themselves, that is, the author name will be displayed next to the question, or they can ask questions anonymously.  All the questions are auto-numbered for ease of tracking.
 
 Members can also answer these questions. The role will be displayed next to the answer.
 
 ### 8. Spam warning and Ban
 
-When a member is spamming the server, after 5 consecutive messages, they will get a warning.
-The bot can also Ban and Unban spammers or members if applicable.
+When a member is spamming the server, after 5 consecutive messages within a short span of time, they will get a warning.
+The Instructors/TA can ban the spammers or members if necessary. A unban command is also added.
 
 ---
 
@@ -270,7 +272,7 @@ For the groups.py file
 ---
 
 ## :earth_americas: Future Scope
-[Project 3](https://github.com/chandur626/ClassMateBot/projects/2) TODO tasks are located in the Projects tab. 
+[Project 3](https://github.com/Ashwinshankar98/ClassMateBot/projects/2) TODO tasks are located in the Projects tab. 
 
 ---
 
