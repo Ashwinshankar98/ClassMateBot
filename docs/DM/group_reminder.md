@@ -23,8 +23,8 @@ Outputs: Bots response
 # How to run it? (Small Example)
 Enter space-separated: "$reminder hello"
 ```
-$reminder
+$reminder "Submission Today for HW!!"
 ```
-Successful execution will ######
+Successful execution will send a dm from classmate bot to all members
 
-![group_reminder](./group_reminder.png)
+![Reminder](https://user-images.githubusercontent.com/19858170/144726697-2bc24b75-ed28-4e6b-9637-76b316f4a1f0.gif)
