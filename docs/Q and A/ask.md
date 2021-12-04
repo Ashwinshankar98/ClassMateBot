@@ -17,10 +17,10 @@ Inputs:
 - question: Entered question
    
 # How to run it? (Small Example)
-Enter space-separated: "$ask question"
+Enter space-separated: "$ask "question" "
 ```
-$ask How?
+$ask "How are you?"
 ```
 Successful execution will add the question to the q-and-a channel.
 
-![ask](./ask.png)
+![image](https://user-images.githubusercontent.com/19858170/144725855-3cccb8a8-1c34-4758-a4d8-83b9cb849569.png)
