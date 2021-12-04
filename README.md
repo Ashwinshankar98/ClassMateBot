@@ -24,8 +24,7 @@
 ---
 
 ## :dart: Basic Overview
-
-https://user-images.githubusercontent.com/60410421/140225894-5da3c56e-829f-4407-ba72-c0878081e388.mp4
+[![Watch the video](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/bot_img.png)](https://www.youtube.com/watch?v=bCzuQmDz424)
 
 
 
