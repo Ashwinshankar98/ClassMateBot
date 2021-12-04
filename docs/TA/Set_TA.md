@@ -23,8 +23,9 @@ Outputs: Bots response
 # How to run it? (Small Example)
 Enter : "$setTA name"
 ```
-$setTA name
+$setTA @user
 ```
 Successful execution will add the member to the TA list.
 
-![setTA](./setTA.png)
+![image](https://user-images.githubusercontent.com/19858170/144727126-f696ebba-e37a-462f-9b44-77a18711034e.png)
+
