@@ -25,7 +25,7 @@ Enter : "$setTA name"
 ```
 $setTA @user
 ```
-Successful execution will add the member to the TA list.
+Successful execution will make the member a TA.
 
 ![image](https://user-images.githubusercontent.com/19858170/144727126-f696ebba-e37a-462f-9b44-77a18711034e.png)
 
