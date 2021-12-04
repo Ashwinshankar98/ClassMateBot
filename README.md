@@ -1,4 +1,6 @@
-<p align="center"><img width=100% src="https://github.com/Ashwinshankar98/ClassMateBot/blob/README-update/data/title.png"></p>
+
+![image](https://user-images.githubusercontent.com/19858170/144728158-9a7f9f7a-bd56-4c4e-ac96-8ada82efb46e.png)
+
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Python](https://img.shields.io/badge/python-v3.6+-yellow.svg)
