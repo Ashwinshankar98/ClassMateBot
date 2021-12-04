@@ -19,4 +19,5 @@ $start_reminders
 Successful execution of this command will start the email reminder notification service. 
 It checks if there are any upcoming events, once every 6 hours, and notifies the students via email. 
 
-![$start_reminders](https://github.com/War-Keeper/ClassMateBot/blob/main/data/media/listreminders.gif)
+![$start_reminders](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/docs/Reminders/start_reminders1.png)
+![$start_reminders](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/docs/Reminders/email.png)
