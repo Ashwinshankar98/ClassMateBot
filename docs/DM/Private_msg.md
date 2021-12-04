@@ -1,4 +1,4 @@
-# About $dm
+# About $DM
 This command sends a DM to a specific person in the guild.
 
 # Location of Code
@@ -23,8 +23,11 @@ Outputs: Bots response
 # How to run it? (Small Example)
 Enter space-separated: "$DM user hello"
 ```
-$DM 
+$DM @username hello
 ```
-Successful execution will show a attendance distribution chart
+Successful execution will send a dm to the person from bot with sender info.
 
-![Private_msg](./Private_msg.png)
+![image](https://user-images.githubusercontent.com/19858170/144726748-ec021e60-0e30-4c69-bd2d-72710b91ba31.png)
+![image](https://user-images.githubusercontent.com/19858170/144726784-c36e0a87-9836-41b8-91dd-2dfd4b776c89.png)
+
+

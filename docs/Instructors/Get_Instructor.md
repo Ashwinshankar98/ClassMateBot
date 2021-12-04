@@ -25,4 +25,4 @@ $getInstructor
 ```
 Successful execution will list the instructors
 
-![get_instructor](./get_instructor.png)
+![image](https://user-images.githubusercontent.com/19858170/144726427-aa94b21b-8807-4f91-bd79-ffa858699765.png)

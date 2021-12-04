@@ -23,8 +23,8 @@ Outputs: Bots response
 # How to run it? (Small Example)
 Enter : "$removeTA name"
 ```
-$removeTA name
+$removeTA @user
 ```
-Successful execution will remove the member from the TA list.
+Successful execution will remove the member as TA.
 
-![removeTA](./removeTA.png)
+![image](https://user-images.githubusercontent.com/19858170/144727312-c7fa8bc1-9fc0-4c42-bfa5-979bfccfce0b.png)

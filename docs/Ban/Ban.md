@@ -21,10 +21,10 @@ Outputs: Bots response
 
    
 # How to run it? (Small Example)
-Enter : "$ban name"
+Enter : "$ban name reason"
 ```
-$Ban name
+$ban @user reason
 ```
 Successful execution will ban the member.
 
-![ban](./ban.png)
+![image](https://user-images.githubusercontent.com/19858170/144727295-751da69a-9f5d-49d6-800f-159cdf32cff1.png)

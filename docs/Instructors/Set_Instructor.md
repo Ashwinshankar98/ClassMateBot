@@ -23,8 +23,9 @@ Outputs: Bots response
 # How to run it? (Small Example)
 Enter: "$setInstructor user"
 ```
-$getInstructor
+$setInstructor @user
 ```
-Successful execution will ###########
+Successful execution will set the member as an instuctor and repond with a bot message.
 
-![set_instructor](./set_instructor.png)
+![image](https://user-images.githubusercontent.com/19858170/144727065-fef96f60-8417-4604-b133-2eeee26374fd.png)
+
