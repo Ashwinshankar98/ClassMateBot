@@ -14,7 +14,7 @@ The code that implements the above mentioned functionality is located [here](../
 
 Inputs:
 - ctx: used to access the values passed through the current context
-- extension: name of the cog that is to be added
+- extension: name of the cog that is to be removed
 
 Outputs:
 - response from bot
