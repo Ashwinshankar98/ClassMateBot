@@ -23,4 +23,4 @@ $ask "How are you?"
 ```
 Successful execution will add the question to the q-and-a channel.
 
-![image](https://user-images.githubusercontent.com/19858170/144725855-3cccb8a8-1c34-4758-a4d8-83b9cb849569.png)
+![ask](https://user-images.githubusercontent.com/19858170/144726034-93cabf07-0e38-4614-bc40-0127f364db22.gif)
