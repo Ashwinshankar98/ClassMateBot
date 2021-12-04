@@ -17,10 +17,10 @@ Inputs:
 - question: Entered question
    
 # How to run it? (Small Example)
-Enter space-separated: "$ask question"
+Enter space-separated: "$askanonym "question" "
 ```
-$ask How?
+$askanonym "Is it okay?"
 ```
 Successful execution will add the question to the q-and-a channel with <i> Anonymous</i> tag.
 
-![askanonym](./askanonym.png)
+![Ask_anonym](https://user-images.githubusercontent.com/19858170/144726153-aba55b13-079f-44bd-8976-e6304c7fc792.gif)
