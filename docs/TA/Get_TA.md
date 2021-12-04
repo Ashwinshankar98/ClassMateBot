@@ -22,6 +22,6 @@ Enter : "$getTA"
 ```
 $getTA
 ```
-Successful execution will display the list if TAs.
+Successful execution will display the TA.
 
-![getTA](./getTA.png)
+![image](https://user-images.githubusercontent.com/19858170/144727146-4166f5e6-7e19-4fb9-93cf-2c79620f0a34.png)
