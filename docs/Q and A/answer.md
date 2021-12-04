@@ -18,10 +18,10 @@ Inputs:
 - ans: Answer to be updated
    
 # How to run it? (Small Example)
-Enter space-separated: "$answer q_num ans"
+Enter space-separated: "$answer q_num "ans" "
 ```
-$answer 3 Yes
+$answer 1 "Good Thanks:)"
 ```
 Successful execution will update the question with the answer.
 
-![answer](./answer.png)
+![Answer](https://user-images.githubusercontent.com/19858170/144726077-c297a06e-16c7-4ce8-9c1e-57e510f8fd42.gif)
