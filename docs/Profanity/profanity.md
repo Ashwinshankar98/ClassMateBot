@@ -33,10 +33,15 @@ Input:
 -text: Custom word to be added to the filter
 
 # How to run it? (Small Example)
-Enter space-separated: "$custom never"
+Enter space-separated: "$custom word"
 ```
-$custom never
+$custom word
 ```
 Successful execution will add the word to the profane list and block it.
 
-![profanity](./profanity.png)
+![image](https://user-images.githubusercontent.com/19858170/144726498-ec56a292-220c-495f-a791-6ae36a031dc4.png)
+
+![image](https://user-images.githubusercontent.com/19858170/144726475-0eedb449-c2cf-46eb-941d-6bbad64980b5.png)
+
+![image](https://user-images.githubusercontent.com/19858170/144726486-eae3073c-c7e9-43eb-992f-bf73198a5a2d.png)
+
