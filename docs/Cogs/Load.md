@@ -1,4 +1,4 @@
-# About loadCog
+# About $loadCog
 This command helps with loading a specific cog
 
 # Location of Code
