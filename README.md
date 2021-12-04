@@ -93,7 +93,16 @@ Members can also answer these questions. The role will be displayed next to the 
 ### 8. Spam warning and Ban
 
 When a member is spamming the server, after 5 consecutive messages within a short span of time, they will get a warning.
-The Instructors/TA can ban the spammers or members if necessary. A unban command is also added.
+The Instructors/TA can ban the spammers or members if necessary. An unban command is also added.
+
+### 9. Reminder
+
+This functionality enables members to set a personal reminder. After the given amount of time, the bot will remind you in the same channel.
+
+### 10. Cog Maintenance
+
+This enables ease usage of cogs. Every feature is represented as a cog in our development model. This functionlity eable easy maintenance of the cogs. 
+You can load, unload or reload a cog with simple commands.
 
 ---
 
@@ -165,6 +174,18 @@ Spam Warning and Ban
 :open_file_folder: [$unban command](./docs/Ban/Unban.md)
 
 :open_file_folder: [Spam Warning](./docs/Ban/Spam_warning.md)
+
+Reminder
+
+:open_file_folder: [$remindme command](./docs/Reminders/remindme.md)
+
+Cog Maintenance
+
+:open_file_folder: [$loadCog command](./docs/Cogs/Load.md)
+
+:open_file_folder: [$unloadCog command](./docs/Cogs/Unload.md)
+
+:open_file_folder: [$reloadCog command](./docs/Cogs/Reload.md)
 
 ## Version 2 Commands
 Data Visualization
