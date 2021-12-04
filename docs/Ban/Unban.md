@@ -22,8 +22,8 @@ Outputs: Bots response
 # How to run it? (Small Example)
 Enter : "$unban name"
 ```
-$unban name
+$unban @user
 ```
 Successful execution will unban the member.
 
-![unban](./unban.png)
+![image](https://user-images.githubusercontent.com/19858170/144727322-b495f1a7-9785-4535-b1f2-16fbd6c41eb6.png)
