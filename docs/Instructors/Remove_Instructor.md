@@ -20,10 +20,11 @@ Inputs:
 Outputs: Bots response
 
 # How to run it? (Small Example)
-Enter: "$removeInstructor name"
+Enter space separated: "$removeInstructor name"
 ```
-$removeInstructor
+$removeInstructor @user
 ```
-Successful execution will##################
+Successful execution will remove the user as instructor and repond with bot message.
 
-![remove_instructor](./remove_instructor.png)
+![image](https://user-images.githubusercontent.com/19858170/144727096-27c385e4-6e88-40ff-a084-354220f9632b.png)
+
