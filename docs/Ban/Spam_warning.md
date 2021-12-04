@@ -16,6 +16,4 @@ This is handled by the bot in the backend.
 
 When a person has more than 4 consecutive msgs, after their 5th msg, warning will appear and all their spams will be deleted.
 
-
-https://user-images.githubusercontent.com/19858170/143974910-52b2b185-e432-453a-8bce-ab63554d3cfb.mp4
-
+![Spam](https://user-images.githubusercontent.com/19858170/144726962-3ed63870-e0b5-4162-ac68-f86bcd9dc7aa.gif)
