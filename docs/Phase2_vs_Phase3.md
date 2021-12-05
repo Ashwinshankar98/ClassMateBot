@@ -3,7 +3,6 @@
 
 |  Improvements | Phase II  | Phase III |
 | ------------ | ------------ | ------------ |
-| Personal Reminder | They had a $remindme command, but it was not working | Fixed the command to set a personal reminder. |
 | New channels | Used only the default channel for all functionality | Have introduced more channels for ease of communication. |
 | New Roles | Roles weren't created on BOT join which threw an error | Added those roles and introduced extra new roles for better classification of the members and to restrict access for certain commands and channels. |
 | Personal Reminder | They had a $remindme command, but it was not working | Fixed the command to set a personal reminder. |
