@@ -3,14 +3,15 @@
 
 |  Improvements | Phase II  | Phase III |
 | ------------ | ------------ | ------------ |
-| Personal Reminder| They had a $remindme command, but it was not working| Fixed the command to set a personal reminder|
+| Personal Reminder| They had a $remindme command, but it was not working| Fixed the command to set a personal reminder.|
+| Channels |They did not have a channel classification , only the general channel| We have introduced 4 channels for ease of communication.|
+| Roles | They did not have any roles classfication, only generic role| We have introduced roles for better classification of the members. |
+| Restriction| As they did not have any defined classification between members, all the commands were open to all| We restricted commands based on roles.|
 
 
 
 |  New Commands/ Features | Details |
 | ------------ |------------ |
-| New channels | We have introduced more channels for ease of communication.|
-| New Roles | We have introduced roles for better classification of the members and to restrict access for certain commands. |
 | Get Instructor  | Returns instructor list |
 | Set Instructor | Command to set a user as Instructor by instructors. |
 | Remove Instructor | Command used to remove a user from Instructor role by instructors.  |
