@@ -130,6 +130,7 @@ python3 bot.py
 ```
 
 ---
+# :computer: Commands
 ## Version 3 Commands
 Attendance
 
