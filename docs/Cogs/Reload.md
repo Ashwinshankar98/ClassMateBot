@@ -1,4 +1,4 @@
-# About reloadCog
+# About $reloadCog
 This command helps with reloading a cog after an update is made.
 
 # Location of Code
