@@ -1,4 +1,4 @@
-# About unloadCog
+# About $unloadCog
 This command helps with unloading a specific cog
 
 # Location of Code
