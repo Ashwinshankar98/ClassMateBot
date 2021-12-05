@@ -9,7 +9,7 @@
 |.5| Docs: doco generated, format not ugly |  |.5|
 |.5| evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people) | [Issues handled by all the memners](https://github.com/Ashwinshankar98/ClassMateBot/issues?q=is%3Aissue+is%3Aclosed) |.5|
 |.5| evidence that the members of the team are working across multiple places in the code base | [Issues handled by all the memners](https://github.com/Ashwinshankar98/ClassMateBot/issues?q=is%3Aissue+is%3Aclosed) |.5|
-|1| Docs: what: point descriptions of each class/function (in isolation)  | [README.md](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/README.md) and [docs folder](https://github.com/Ashwinshankar98/ClassMateBot/tree/main/docs)|1|
+|1| Docs: what: point descriptions of each class/function (in isolation)  | [README.md](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/README.md) and [docs folder](https://github.com/Ashwinshankar98/ClassMateBot/tree/main/docs) and [Pydoc](https://ashwinshankar98.github.io/ClassMateBot/)|1|
 |.5| Number of commits: by different people  | [Contributor stats](https://github.com/Ashwinshankar98/ClassMateBot/graphs/contributors) |.5|
 |1| issues are being closed | evidence in GH [closed issues](https://github.com/Ashwinshankar98/ClassMateBot/issues?q=is%3Aissue+is%3Aclosed) |1|
 |.5| issues are discussed before they are closed | comments on the [issue](https://github.com/Ashwinshankar98/ClassMateBot/issues?q=is%3Aissue) and weekly group meetings. | .5|
