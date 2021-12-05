@@ -2,7 +2,7 @@
 This command lets the user start the email reminder notification service for subscribed users.
 
 # Location of Code
-The code that implements the above mentioned gits functionality is located [here](https://github.com/War-Keeper/ClassMateBot/blob/main/cogs/deadline.py).
+The code that implements the above mentioned gits functionality is located [here](../../cogs/deadline.py).
 
 # Code Description
 ## Functions
