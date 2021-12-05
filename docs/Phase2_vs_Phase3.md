@@ -12,18 +12,11 @@
 
 |  New Commands/ Features | Details |
 | ------------ |------------ |
-| Get Instructor  | Returns instructor list |
-| Set Instructor | Command to set a user as Instructor by instructors. |
-| Remove Instructor | Command used to remove a user from Instructor role by instructors.  |
-| Get TA |Returns TA list|
-| Set TA | Command to set a user as TA by instructors.|
-| Remove TA | Command used to remove a user from TA role by instructors.|
-| Custom Profanity | Define a word to be added to the profanity filter. |
 |Ban| Used to ban a member|
 |Unban| Command to Unban a member|
 |Spam warning| Feature to give warning to members who are spamming|
 |Attendance| This command lets instructors calculate attendance and shows distribution chart|
-| DM |This command sends a DM to a specific person in the guild. |
+|DM |This command sends a DM to a specific person in the guild. |
 |Reminder| This command is used to send a reminder to all users in the guild.|
 |Ask| This command is used to ask a question in the q-and-a channel.|
 |Answer| This command is used to answer a question in the q-and-a channel.|
@@ -31,3 +24,10 @@
 |Load Cog| This command is used to load a cog to the bot.|
 |Unload Cog| This command is used to unload a cog from the bot.|
 |Reload Cog| This command is used to reload a cog in the bot.|
+| Get Instructor  | Returns instructor list |
+| Set Instructor | Command to set a user as Instructor by instructors. |
+| Remove Instructor | Command used to remove a user from Instructor role by instructors.  |
+| Get TA |Returns TA list|
+| Set TA | Command to set a user as TA by instructors.|
+| Remove TA | Command used to remove a user from TA role by instructors.|
+| Custom Profanity | Define a word to be added to the profanity filter. |
