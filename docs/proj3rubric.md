@@ -6,7 +6,7 @@
 |.5| workload is spread over the whole team (so one team member is often Xtimes more productive than the others...| [github insights](https://github.com/Ashwinshankar98/ClassMateBot/pulse/monthly) |.5|
 |.5| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing | [README.md](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/README.md) |.5|
 |.5| the files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up  | [CONTRIBUTING.md](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/CONTRIBUTING.md) |.5|
-|.5| Docs: doco generated, format not ugly |  |.5|
+|.5| Docs: doco generated, format not ugly | [Function descriptions](https://ashwinshankar98.github.io/ClassMateBot/) |.5|
 |.5| evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people) | [Issues handled by all the memners](https://github.com/Ashwinshankar98/ClassMateBot/issues?q=is%3Aissue+is%3Aclosed) |.5|
 |.5| evidence that the members of the team are working across multiple places in the code base | [Issues handled by all the memners](https://github.com/Ashwinshankar98/ClassMateBot/issues?q=is%3Aissue+is%3Aclosed) |.5|
 |1| Docs: what: point descriptions of each class/function (in isolation)  | [README.md](https://github.com/Ashwinshankar98/ClassMateBot/blob/main/README.md) and [docs folder](https://github.com/Ashwinshankar98/ClassMateBot/tree/main/docs) and [Pydoc](https://ashwinshankar98.github.io/ClassMateBot/)|1|
